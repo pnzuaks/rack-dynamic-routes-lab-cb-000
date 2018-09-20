@@ -5,23 +5,22 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
+      if 
       @@items.each do |item|
         resp.write item.price
       end
-    else
-      resp.write "Path Not Found"
+    elsif
+      resp.write "Item not found"
     end
 
 
-    if req.path=="/items/<ITEM_NAME>"
-      item_name = req.params["item"]
-      if @@items.contains?(item_name)
-        resp.write item_name.price
-      else
-      resp.write "Item not found"
-
-
-  end
+  #   if req.path=="/items/<ITEM_NAME>"
+  #     item_name = req.params["item"]
+  #     if @@items.contains?(item_name)
+  #       resp.write item_name.price
+  #     else
+  #     resp.write "Item not found"
+  # end
     else
       resp.write "Route not found"
       resp.status = 404
