@@ -7,6 +7,7 @@ class Application
     if req.path.match(/items/)
       # req.path=="/items/<ITEM NAME>"
       # search_term = req.params["<ITEM NAME>"]
+
       @@items.each do |item|
       resp.write item.price
     end
