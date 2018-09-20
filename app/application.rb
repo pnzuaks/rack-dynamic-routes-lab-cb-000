@@ -4,7 +4,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/)
+    if req.path=="/items/<ITEM_NAME>"
       item_name = req.params["item"]
       if @@items.contains?(item_name)
         resp.write "Item not found"
