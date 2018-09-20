@@ -7,9 +7,10 @@ class Application
     if req.path=="/items/<ITEM_NAME>"
       item_name = req.params["item"]
       if @@items.contains?(item_name)
-        resp.write "Item not found"
+        resp.write item_name.price
       else
-      resp.write item_name.price
+      resp.write "Item not found"
+
 
   end
     else
