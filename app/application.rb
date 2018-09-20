@@ -4,7 +4,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path=="/items/<ITEM NAME>"
+    if req.path.match(/items/)
+      # req.path=="/items/<ITEM NAME>"
       # search_term = req.params["<ITEM NAME>"]
       resp.write "Hola"
     else
