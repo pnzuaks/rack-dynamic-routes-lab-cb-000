@@ -8,9 +8,9 @@ class Application
       @@items.each do |item|
         resp.write item.price
       end
-    elsif
-      resp.write "Item not found"
-  
+    # elsif
+    #   resp.write "Item not found"
+
 
 
   #   if req.path=="/items/<ITEM_NAME>"
