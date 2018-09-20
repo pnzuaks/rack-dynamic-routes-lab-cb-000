@@ -5,8 +5,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/<ITEM NAME>)
-      # req.path=="/items/<ITEM NAME>"
-      # search_term = req.params["<ITEM NAME>"]
+      item_name = req.params[<ITEM NAME>]
       if @@items.empty?
         resp.write "Item not found"
       else
