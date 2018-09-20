@@ -5,7 +5,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path=="/items/<ITEM NAME>"
-      search_term = req.params["item"]
+      search_term = req.params["<ITEM NAME>"]
       resp.write search_term.price
     else
       resp.write "Route not found"
