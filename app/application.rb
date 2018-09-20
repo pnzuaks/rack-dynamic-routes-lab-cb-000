@@ -9,9 +9,9 @@ class Application
       if @@items.contains?(item_name)
         resp.write "Item not found"
       else
-      @@items.each do |item|
+      # @@items.each do |item|
       resp.write item_name.price
-    end
+    # end
 
   end
     else
