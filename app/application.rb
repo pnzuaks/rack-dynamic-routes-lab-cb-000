@@ -5,9 +5,15 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      @@items.each do |item|
-        resp.write item.price
+      item_name = req.params["?"]
+      if @@items.contains?(item_name)
+            resp.write item_name.price
+          else
+          resp.write "Item not found"
       end
+      # @@items.each do |item|
+      #   resp.write item.price
+      # end
     # elsif
     #   resp.write "Item not found"
 
