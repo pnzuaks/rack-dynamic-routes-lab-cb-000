@@ -10,9 +10,9 @@ class Application
         resp.write "Item not found"
       else
       @@items.each do |item|
-      resp.write item.price
+      resp.write item_name.price
     end
-    
+
   end
     else
       resp.write "Route not found"
