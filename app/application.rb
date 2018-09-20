@@ -9,7 +9,7 @@ class Application
       if @@items.contains?(item)
         resp.write "Item not found"
       else
-      resp.write item_name.price
+      resp.write item.price
 
   end
     else
