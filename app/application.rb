@@ -6,6 +6,7 @@ class Application
 
     if req.path=="/items/<ITEM_NAME>"
       item_name = req.params["item"]
+      binding.pry
       if @@items.contains?(item_name)
         resp.write item_name.price
       else
