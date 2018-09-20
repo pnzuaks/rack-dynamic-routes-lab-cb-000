@@ -13,6 +13,7 @@ class Application
       @@items.each do |item|
       resp.write item.price
     end
+  end
     else
       resp.write "Route not found"
       resp.status = 404
