@@ -6,7 +6,6 @@ class Application
 
     if req.path.match(/items/item_name)
       # item_name = req.params["item"]
-      @@items.each do |item|
       if @@items.contains?(item_name)
         resp.write "Item not found"
       else
