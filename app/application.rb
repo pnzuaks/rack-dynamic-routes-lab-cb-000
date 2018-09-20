@@ -4,6 +4,15 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+    if req.path.match(/items/)
+      @@items.each do |item|
+        resp.write item.price
+      end
+    else
+      resp.write "Path Not Found"
+    end
+
+
     if req.path=="/items/<ITEM_NAME>"
       item_name = req.params["item"]
       if @@items.contains?(item_name)
