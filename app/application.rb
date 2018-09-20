@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       # req.path=="/items/<ITEM NAME>"
       # search_term = req.params["<ITEM NAME>"]
-      resp.write "Hola"
+      resp.write item.price
     else
       resp.write "Route not found"
       resp.status = 404
