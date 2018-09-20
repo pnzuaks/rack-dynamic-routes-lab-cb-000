@@ -7,7 +7,9 @@ class Application
     if req.path.match(/items/)
       # req.path=="/items/<ITEM NAME>"
       # search_term = req.params["<ITEM NAME>"]
-
+      if @@cart.empty?
+        resp.write "Your cart is empty"
+      else
       @@items.each do |item|
       resp.write item.price
     end
